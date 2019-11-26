@@ -1,0 +1,28 @@
+//
+//  KD_HoverPrefixHeader.pch
+//  KD_Hover
+//
+//  Created by paul on 2019/11/25.
+//  Copyright © 2019 paul. All rights reserved.
+//
+
+#ifndef KD_HoverPrefixHeader_pch
+#define KD_HoverPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#define KD_ScreenSize ([UIScreen mainScreen].bounds.size)
+#define KD_StatusBarHeight [UIApplication sharedApplication].statusBarFrame.size.height
+#define KD_NavHeight [UINavigationController new].navigationBar.frame.size.height
+
+#define KD_AddNotification(KD_target, KD_SEL, KD_name, KD_obj) [[NSNotificationCenter defaultCenter] addObserver:KD_target selector:KD_SEL name:KD_name object:KD_obj]
+#define KD_RemoveNotification(KD_target, KD_name, KD_obj) [[NSNotificationCenter defaultCenter] removeObserver:KD_target name:KD_name object:KD_obj]
+#define KD_PostNotification(KD_name, KD_obj) [[NSNotificationCenter defaultCenter] postNotificationName:KD_name object:KD_obj]
+
+#import "KD_TableView.h" // 快捷创建悬停tableView基类
+#import "KD_ScrollView.h" // 快捷创建悬停scrollView基类
+#import "Masonry.h" // Masonry 代码布局
+#import "KD_HoverHeader.h" // 公用字符串定义
+
+#endif /* KD_HoverPrefixHeader_pch */
