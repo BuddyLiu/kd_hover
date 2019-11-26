@@ -10,6 +10,7 @@
 #import "HoverSubViewController.h"
 #import "HoverRootTableViewController.h"
 #import "HoverRootScrollViewController.h"
+#import "HoverObserverTableViewController.h"
 
 @interface HoverRootViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -33,6 +34,7 @@
 -(void)initSelfData {
     [self.mainDataArray addObject:@"TableView Hover"];
     [self.mainDataArray addObject:@"ScrollView Hover"];
+    [self.mainDataArray addObject:@"TableView Observer Hover"];
 }
 
 #pragma mark - delegate
@@ -63,6 +65,9 @@ static NSString *identifier = @"cell";
         [self.navigationController pushViewController:vc animated:YES];
     } else if(indexPath.row == 1) {
         HoverRootScrollViewController *vc = [[HoverRootScrollViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if(indexPath.row == 2) {
+        HoverObserverTableViewController *vc = [[HoverObserverTableViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }
