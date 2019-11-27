@@ -7,10 +7,11 @@
 //
 
 #import "HoverRootViewController.h"
-#import "HoverSubViewController.h"
-#import "HoverRootTableViewController.h"
-#import "HoverRootScrollViewController.h"
+#import "HoverNotificationSubViewController.h"
+#import "HoverNotificationTableViewController.h"
+#import "HoverNotificationScrollViewController.h"
 #import "HoverObserverTableViewController.h"
+#import "HoverObserverScrollViewController.h"
 
 @interface HoverRootViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -32,9 +33,10 @@
 #pragma mark - self
 
 -(void)initSelfData {
-    [self.mainDataArray addObject:@"TableView Hover"];
-    [self.mainDataArray addObject:@"ScrollView Hover"];
+    [self.mainDataArray addObject:@"TableView Notification Hover"];
+    [self.mainDataArray addObject:@"ScrollView Notification Hover"];
     [self.mainDataArray addObject:@"TableView Observer Hover"];
+    [self.mainDataArray addObject:@"ScrollView Observer Hover"];
 }
 
 #pragma mark - delegate
@@ -61,13 +63,16 @@ static NSString *identifier = @"cell";
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     if(indexPath.row == 0) {
-        HoverRootTableViewController *vc = [[HoverRootTableViewController alloc] init];
+        HoverNotificationTableViewController *vc = [[HoverNotificationTableViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else if(indexPath.row == 1) {
-        HoverRootScrollViewController *vc = [[HoverRootScrollViewController alloc] init];
+        HoverNotificationScrollViewController *vc = [[HoverNotificationScrollViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     } else if(indexPath.row == 2) {
         HoverObserverTableViewController *vc = [[HoverObserverTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+    } else if(indexPath.row == 3) {
+        HoverObserverScrollViewController *vc = [[HoverObserverScrollViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
     }
 }

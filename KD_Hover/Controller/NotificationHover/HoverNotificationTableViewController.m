@@ -1,18 +1,18 @@
 //
-//  HoverRootTableViewController.m
+//  HoverNotificationTableViewController.m
 //  KD_Hover
 //
 //  Created by paul on 2019/11/26.
 //  Copyright © 2019 paul. All rights reserved.
 //
 
-#import "HoverRootTableViewController.h"
-#import "HoverSubViewController.h"
+#import "HoverNotificationTableViewController.h"
+#import "HoverNotificationSubViewController.h"
 
-@interface HoverRootTableViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HoverNotificationTableViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) KD_TableView *mainTableView;
-@property (nonatomic, strong) HoverSubViewController *subTableViewController;
+@property (nonatomic, strong) HoverNotificationSubViewController *subTableViewController;
 
 @property (nonatomic, strong) NSMutableArray *headerDataArray;
 @property (nonatomic, assign) BOOL canScroll;
@@ -22,7 +22,7 @@
 static NSInteger HeaderHeight = 150;
 static NSInteger MainTableViewTag = 9001;
 
-@implementation HoverRootTableViewController
+@implementation HoverNotificationTableViewController
 
 #pragma mark - life
 - (void)viewDidLoad {
@@ -151,9 +151,9 @@ static NSString *identifier = @"cell";
     return _headerDataArray;
 }
 
--(HoverSubViewController *)subTableViewController {
+-(HoverNotificationSubViewController *)subTableViewController {
     if(_subTableViewController == nil) {
-        _subTableViewController = [[HoverSubViewController alloc] init];
+        _subTableViewController = [[HoverNotificationSubViewController alloc] init];
     }
     return _subTableViewController;
 }

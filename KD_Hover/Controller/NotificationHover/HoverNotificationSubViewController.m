@@ -1,14 +1,14 @@
 //
-//  HoverSubViewController.m
+//  HoverNotificationSubViewController.m
 //  KD_Hover
 //
 //  Created by paul on 2019/11/26.
 //  Copyright © 2019 paul. All rights reserved.
 //
 
-#import "HoverSubViewController.h"
+#import "HoverNotificationSubViewController.h"
 
-@interface HoverSubViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HoverNotificationSubViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) KD_TableView *subTableView;
 @property (nonatomic, strong) NSMutableArray *subDataArray;
@@ -18,7 +18,7 @@
 
 static NSInteger CellHeight = 80;
 
-@implementation HoverSubViewController
+@implementation HoverNotificationSubViewController
 
 #pragma mark - life
 - (void)viewDidLoad {

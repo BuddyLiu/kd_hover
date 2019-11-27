@@ -1,8 +1,8 @@
 //
-//  HoverRootTableViewController.h
+//  HoverObserverScrollViewController.h
 //  KD_Hover
 //
-//  Created by paul on 2019/11/26.
+//  Created by dzj on 2019/11/27.
 //  Copyright © 2019 paul. All rights reserved.
 //
 
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HoverRootTableViewController : UIViewController
+@interface HoverObserverScrollViewController : UIViewController
 
 @end
 

@@ -1,19 +1,19 @@
 //
-//  HoverRootScrollViewController.m
+//  HoverObserverScrollViewController.m
 //  KD_Hover
 //
-//  Created by paul on 2019/11/26.
+//  Created by dzj on 2019/11/27.
 //  Copyright © 2019 paul. All rights reserved.
 //
 
-#import "HoverRootScrollViewController.h"
-#import "HoverSubViewController.h"
+#import "HoverObserverScrollViewController.h"
+#import "HoverObserverSubViewController.h"
 
-@interface HoverRootScrollViewController ()<UIScrollViewDelegate>
+@interface HoverObserverScrollViewController ()<UIScrollViewDelegate>
 
 @property (nonatomic, strong) KD_ScrollView *mainScrollView;
 @property (nonatomic, strong) UIView *headerView;
-@property (nonatomic, strong) HoverSubViewController *subTableViewController;
+@property (nonatomic, strong) HoverObserverSubViewController *subTableViewController;
 
 @property (nonatomic, assign) BOOL canScroll;
 
@@ -22,17 +22,33 @@
 static NSInteger HeaderHeight = 150;
 static NSInteger HeaderSubViewCount = 3;
 
-@implementation HoverRootScrollViewController
+@implementation HoverObserverScrollViewController
 
 #pragma mark - life
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    [self initMainView];
+    self.canScroll = YES;
+    [self.subTableViewController.subTableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+}
+
+#pragma mark - Observer
+-(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    CGFloat contentOffsetY = self.subTableViewController.subTableView.contentOffset.y;
+    if(contentOffsetY <= 0) {
+        self.canScroll = YES;
+    } else {
+        self.canScroll = NO;
+    }
+}
+
+#pragma mark - self
+-(void)initMainView {
     [self.view addSubview:self.mainScrollView];
     [self.mainScrollView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view).with.insets(UIEdgeInsetsMake(KD_StatusBarHeight + KD_NavHeight, 0, 0, 0));
     }];
-
+    
     [self.view layoutIfNeeded];
     self.mainScrollView.contentSize = CGSizeMake(KD_ScreenSize.width, KD_ScreenSize.height - KD_StatusBarHeight - KD_NavHeight + HeaderHeight*HeaderSubViewCount);
     
@@ -75,37 +91,15 @@ static NSInteger HeaderSubViewCount = 3;
         make.height.equalTo(@(KD_ScreenSize.height - HeaderHeight - KD_StatusBarHeight - KD_NavHeight));
         make.bottom.equalTo(self.mainScrollView.mas_bottom);
     }];
-    [self addNotification];
-    self.canScroll = YES;
-}
-
--(void)dealloc {
-    KD_RemoveNotification(self, KD_SubTableIsStayToTop, nil);
-    KD_RemoveNotification(self, KD_SubTableIsLeaveTop, nil);
-}
-
-#pragma mark - self
-
--(void)addNotification {
-    KD_AddNotification(self, @selector(subTableViewStayTop:), KD_SubTableIsStayToTop, nil);
-    KD_AddNotification(self, @selector(subTableViewLeaveTop:), KD_SubTableIsLeaveTop, nil);
-}
-
--(void)subTableViewStayTop:(NSNotification *)noti {
-    self.canScroll = YES;
-}
-
--(void)subTableViewLeaveTop:(NSNotification *)noti {
-    self.canScroll = NO;
 }
 
 #pragma mark - delegate
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
     if(scrollView.contentOffset.y < HeaderHeight*(HeaderSubViewCount-1)) {
-        KD_PostNotification(KD_MainTableIsLeaveTop, nil);
+        self.subTableViewController.canScroll = NO;
     } else {
-        KD_PostNotification(KD_MainTableIsStayToTop, nil);
+        self.subTableViewController.canScroll = YES;
     }
     if(!self.canScroll) {
         [self.mainScrollView setContentOffset:CGPointMake(0, HeaderHeight*(HeaderSubViewCount-1))];
@@ -128,9 +122,9 @@ static NSInteger HeaderSubViewCount = 3;
     return _headerView;
 }
 
--(HoverSubViewController *)subTableViewController {
+-(HoverObserverSubViewController *)subTableViewController {
     if(_subTableViewController == nil) {
-        _subTableViewController = [[HoverSubViewController alloc] init];
+        _subTableViewController = [[HoverObserverSubViewController alloc] init];
     }
     return _subTableViewController;
 }

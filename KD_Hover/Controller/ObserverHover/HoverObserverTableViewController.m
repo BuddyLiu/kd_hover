@@ -37,6 +37,7 @@ static NSInteger MainTableViewTag = 9001;
     [self.subTableViewController.subTableView removeObserver:self forKeyPath:@"contentOffset"];
 }
 
+#pragma mark - Observer
 -(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     CGFloat contentOffsetY = self.subTableViewController.subTableView.contentOffset.y;
     if(contentOffsetY <= 0) {

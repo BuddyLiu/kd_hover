@@ -13,12 +13,13 @@
 		04815EA2238BB704004173D4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EA1238BB704004173D4 /* main.m */; };
 		04815EAC238BB7C5004173D4 /* HoverRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EAB238BB7C5004173D4 /* HoverRootViewController.m */; };
 		04815EAF238BB875004173D4 /* KD_TableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EAE238BB875004173D4 /* KD_TableView.m */; };
-		04815EB5238CF346004173D4 /* HoverSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EB4238CF346004173D4 /* HoverSubViewController.m */; };
-		04815EB9238D0C30004173D4 /* HoverRootTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EB8238D0C30004173D4 /* HoverRootTableViewController.m */; };
-		04815EBC238D0C46004173D4 /* HoverRootScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EBB238D0C46004173D4 /* HoverRootScrollViewController.m */; };
+		04815EB5238CF346004173D4 /* HoverNotificationSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EB4238CF346004173D4 /* HoverNotificationSubViewController.m */; };
+		04815EB9238D0C30004173D4 /* HoverNotificationTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EB8238D0C30004173D4 /* HoverNotificationTableViewController.m */; };
+		04815EBC238D0C46004173D4 /* HoverNotificationScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EBB238D0C46004173D4 /* HoverNotificationScrollViewController.m */; };
 		04815EBF238D0F55004173D4 /* KD_ScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EBE238D0F55004173D4 /* KD_ScrollView.m */; };
 		04815EC4238D2571004173D4 /* HoverObserverTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EC3238D2571004173D4 /* HoverObserverTableViewController.m */; };
 		04815EC7238D2661004173D4 /* HoverObserverSubViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EC6238D2661004173D4 /* HoverObserverSubViewController.m */; };
+		04815ECA238E1C30004173D4 /* HoverObserverScrollViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 04815EC9238E1C30004173D4 /* HoverObserverScrollViewController.m */; };
 		251D894AF4C91DFFBB1B8A65 /* libPods-KD_Hover.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB8E4172691FB078DAE1355 /* libPods-KD_Hover.a */; };
 /* End PBXBuildFile section */
 
@@ -35,19 +36,21 @@
 		04815EAD238BB875004173D4 /* KD_TableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KD_TableView.h; sourceTree = "<group>"; };
 		04815EAE238BB875004173D4 /* KD_TableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KD_TableView.m; sourceTree = "<group>"; };
 		04815EB0238BBCA5004173D4 /* KD_HoverPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KD_HoverPrefixHeader.pch; sourceTree = "<group>"; };
-		04815EB3238CF346004173D4 /* HoverSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverSubViewController.h; sourceTree = "<group>"; };
-		04815EB4238CF346004173D4 /* HoverSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverSubViewController.m; sourceTree = "<group>"; };
+		04815EB3238CF346004173D4 /* HoverNotificationSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverNotificationSubViewController.h; sourceTree = "<group>"; };
+		04815EB4238CF346004173D4 /* HoverNotificationSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverNotificationSubViewController.m; sourceTree = "<group>"; };
 		04815EB6238CF8C7004173D4 /* KD_HoverHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KD_HoverHeader.h; sourceTree = "<group>"; };
-		04815EB7238D0C30004173D4 /* HoverRootTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverRootTableViewController.h; sourceTree = "<group>"; };
-		04815EB8238D0C30004173D4 /* HoverRootTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverRootTableViewController.m; sourceTree = "<group>"; };
-		04815EBA238D0C46004173D4 /* HoverRootScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverRootScrollViewController.h; sourceTree = "<group>"; };
-		04815EBB238D0C46004173D4 /* HoverRootScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverRootScrollViewController.m; sourceTree = "<group>"; };
+		04815EB7238D0C30004173D4 /* HoverNotificationTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverNotificationTableViewController.h; sourceTree = "<group>"; };
+		04815EB8238D0C30004173D4 /* HoverNotificationTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverNotificationTableViewController.m; sourceTree = "<group>"; };
+		04815EBA238D0C46004173D4 /* HoverNotificationScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverNotificationScrollViewController.h; sourceTree = "<group>"; };
+		04815EBB238D0C46004173D4 /* HoverNotificationScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverNotificationScrollViewController.m; sourceTree = "<group>"; };
 		04815EBD238D0F55004173D4 /* KD_ScrollView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KD_ScrollView.h; sourceTree = "<group>"; };
 		04815EBE238D0F55004173D4 /* KD_ScrollView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KD_ScrollView.m; sourceTree = "<group>"; };
 		04815EC2238D2571004173D4 /* HoverObserverTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverObserverTableViewController.h; sourceTree = "<group>"; };
 		04815EC3238D2571004173D4 /* HoverObserverTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverObserverTableViewController.m; sourceTree = "<group>"; };
 		04815EC5238D2661004173D4 /* HoverObserverSubViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverObserverSubViewController.h; sourceTree = "<group>"; };
 		04815EC6238D2661004173D4 /* HoverObserverSubViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverObserverSubViewController.m; sourceTree = "<group>"; };
+		04815EC8238E1C30004173D4 /* HoverObserverScrollViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HoverObserverScrollViewController.h; sourceTree = "<group>"; };
+		04815EC9238E1C30004173D4 /* HoverObserverScrollViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HoverObserverScrollViewController.m; sourceTree = "<group>"; };
 		24149F7D2CF77209343A1FFD /* Pods-KD_Hover.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KD_Hover.debug.xcconfig"; path = "Target Support Files/Pods-KD_Hover/Pods-KD_Hover.debug.xcconfig"; sourceTree = "<group>"; };
 		42A103C3899F484BCD847F9E /* Pods-KD_Hover.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KD_Hover.release.xcconfig"; path = "Target Support Files/Pods-KD_Hover/Pods-KD_Hover.release.xcconfig"; sourceTree = "<group>"; };
 		EDB8E4172691FB078DAE1355 /* libPods-KD_Hover.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KD_Hover.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,12 +128,12 @@
 		04815EC0238D2485004173D4 /* NotificationHover */ = {
 			isa = PBXGroup;
 			children = (
-				04815EB7238D0C30004173D4 /* HoverRootTableViewController.h */,
-				04815EB8238D0C30004173D4 /* HoverRootTableViewController.m */,
-				04815EBA238D0C46004173D4 /* HoverRootScrollViewController.h */,
-				04815EBB238D0C46004173D4 /* HoverRootScrollViewController.m */,
-				04815EB3238CF346004173D4 /* HoverSubViewController.h */,
-				04815EB4238CF346004173D4 /* HoverSubViewController.m */,
+				04815EB7238D0C30004173D4 /* HoverNotificationTableViewController.h */,
+				04815EB8238D0C30004173D4 /* HoverNotificationTableViewController.m */,
+				04815EBA238D0C46004173D4 /* HoverNotificationScrollViewController.h */,
+				04815EBB238D0C46004173D4 /* HoverNotificationScrollViewController.m */,
+				04815EB3238CF346004173D4 /* HoverNotificationSubViewController.h */,
+				04815EB4238CF346004173D4 /* HoverNotificationSubViewController.m */,
 			);
 			path = NotificationHover;
 			sourceTree = "<group>";
@@ -140,6 +143,8 @@
 			children = (
 				04815EC2238D2571004173D4 /* HoverObserverTableViewController.h */,
 				04815EC3238D2571004173D4 /* HoverObserverTableViewController.m */,
+				04815EC8238E1C30004173D4 /* HoverObserverScrollViewController.h */,
+				04815EC9238E1C30004173D4 /* HoverObserverScrollViewController.m */,
 				04815EC5238D2661004173D4 /* HoverObserverSubViewController.h */,
 				04815EC6238D2661004173D4 /* HoverObserverSubViewController.m */,
 			);
@@ -258,15 +263,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04815ECA238E1C30004173D4 /* HoverObserverScrollViewController.m in Sources */,
 				04815EC7238D2661004173D4 /* HoverObserverSubViewController.m in Sources */,
-				04815EB5238CF346004173D4 /* HoverSubViewController.m in Sources */,
-				04815EB9238D0C30004173D4 /* HoverRootTableViewController.m in Sources */,
+				04815EB5238CF346004173D4 /* HoverNotificationSubViewController.m in Sources */,
+				04815EB9238D0C30004173D4 /* HoverNotificationTableViewController.m in Sources */,
 				04815EC4238D2571004173D4 /* HoverObserverTableViewController.m in Sources */,
 				04815EBF238D0F55004173D4 /* KD_ScrollView.m in Sources */,
 				04815EA2238BB704004173D4 /* main.m in Sources */,
 				04815EAC238BB7C5004173D4 /* HoverRootViewController.m in Sources */,
 				04815EAF238BB875004173D4 /* KD_TableView.m in Sources */,
-				04815EBC238D0C46004173D4 /* HoverRootScrollViewController.m in Sources */,
+				04815EBC238D0C46004173D4 /* HoverNotificationScrollViewController.m in Sources */,
 				04815E94238BB702004173D4 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

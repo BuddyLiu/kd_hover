@@ -1,5 +1,5 @@
 //
-//  HoverRootScrollViewController.h
+//  HoverNotificationSubViewController.h
 //  KD_Hover
 //
 //  Created by paul on 2019/11/26.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HoverRootScrollViewController : UIViewController
+@interface HoverNotificationSubViewController : UIViewController
 
 @end
 
