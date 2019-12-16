@@ -12,6 +12,7 @@
 #import "HoverNotificationScrollViewController.h"
 #import "HoverObserverTableViewController.h"
 #import "HoverObserverScrollViewController.h"
+#import "HoverContentInsetsTableViewController.h"
 
 @interface HoverRootViewController ()<UITableViewDelegate, UITableViewDataSource>
 
@@ -37,6 +38,7 @@
     [self.mainDataArray addObject:@"ScrollView Notification Hover"];
     [self.mainDataArray addObject:@"TableView Observer Hover"];
     [self.mainDataArray addObject:@"ScrollView Observer Hover"];
+    [self.mainDataArray addObject:@"TableView ContentInsets Hover"];
 }
 
 #pragma mark - delegate
@@ -74,8 +76,12 @@ static NSString *identifier = @"cell";
     } else if(indexPath.row == 3) {
         HoverObserverScrollViewController *vc = [[HoverObserverScrollViewController alloc] init];
         [self.navigationController pushViewController:vc animated:YES];
+    } else if(indexPath.row == 4) {
+        HoverContentInsetsTableViewController *vc = [[HoverContentInsetsTableViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
     }
 }
+
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return tableView.estimatedRowHeight;
 }

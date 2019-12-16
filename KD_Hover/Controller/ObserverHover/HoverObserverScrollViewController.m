@@ -29,7 +29,11 @@ static NSInteger HeaderSubViewCount = 3;
     [super viewDidLoad];
     [self initMainView];
     self.canScroll = YES;
-    [self.subTableViewController.subTableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    KD_AddObserver(self.subTableViewController.subTableView, self, @"contentOffset");
+}
+
+-(void)dealloc {
+    KD_RemoveObserver(self.subTableViewController.subTableView, self, @"contentOffset");
 }
 
 #pragma mark - Observer

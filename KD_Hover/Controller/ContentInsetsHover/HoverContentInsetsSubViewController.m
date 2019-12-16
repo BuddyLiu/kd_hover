@@ -1,23 +1,22 @@
 //
-//  HoverObserverSubViewController.m
+//  HoverContentInsetsSubViewController.m
 //  KD_Hover
 //
-//  Created by paul on 2019/11/26.
+//  Created by paul on 2019/11/27.
 //  Copyright © 2019 paul. All rights reserved.
 //
 
-#import "HoverObserverSubViewController.h"
+#import "HoverContentInsetsSubViewController.h"
 
-@interface HoverObserverSubViewController ()<UITableViewDelegate, UITableViewDataSource>
+@interface HoverContentInsetsSubViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSMutableArray *subDataArray;
-
 
 @end
 
 static NSInteger CellHeight = 80;
 
-@implementation HoverObserverSubViewController
+@implementation HoverContentInsetsSubViewController
 
 #pragma mark - life
 - (void)viewDidLoad {
@@ -59,7 +58,7 @@ static NSString *identifier = @"SubCell";
         cell.backgroundColor = [[UIColor blueColor] colorWithAlphaComponent:0.15];
         tableView.separatorColor = [UIColor whiteColor];
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%d", indexPath.row+1];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row+1];
     return cell;
 }
 

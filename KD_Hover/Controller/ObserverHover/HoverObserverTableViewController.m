@@ -30,11 +30,11 @@ static NSInteger MainTableViewTag = 9001;
     [self initSelfData];
     [self.mainTableView reloadData];
     self.canScroll = YES;
-    [self.subTableViewController.subTableView addObserver:self forKeyPath:@"contentOffset" options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil];
+    KD_AddObserver(self.subTableViewController.subTableView, self, @"contentOffset");
 }
 
 -(void)dealloc {
-    [self.subTableViewController.subTableView removeObserver:self forKeyPath:@"contentOffset"];
+    KD_RemoveObserver(self.subTableViewController.subTableView, self, @"contentOffset");
 }
 
 #pragma mark - Observer

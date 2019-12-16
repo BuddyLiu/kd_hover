@@ -20,6 +20,10 @@
 #define KD_RemoveNotification(KD_target, KD_name, KD_obj) [[NSNotificationCenter defaultCenter] removeObserver:KD_target name:KD_name object:KD_obj]
 #define KD_PostNotification(KD_name, KD_obj) [[NSNotificationCenter defaultCenter] postNotificationName:KD_name object:KD_obj]
 
+#define KD_AddObserver(KD_ToObject, KD_Target, KD_KeyPath) [KD_ToObject addObserver:KD_Target forKeyPath:KD_KeyPath options:(NSKeyValueObservingOptionNew | NSKeyValueObservingOptionOld) context:nil]
+#define KD_AddObserverOptions(KD_ToObject, KD_Target, KD_KeyPath, KD_Options, KD_Context) [KD_ToObject addObserver:KD_Target forKeyPath:KD_KeyPath options:KD_Options context:KD_Context]
+#define KD_RemoveObserver(KD_ToObject, KD_Target, KD_KeyPath) [KD_ToObject removeObserver:KD_Target forKeyPath:KD_KeyPath];
+
 #import "KD_TableView.h" // 快捷创建悬停tableView基类
 #import "KD_ScrollView.h" // 快捷创建悬停scrollView基类
 #import "Masonry.h" // Masonry 代码布局
